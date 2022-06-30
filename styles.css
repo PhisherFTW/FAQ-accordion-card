@@ -11,7 +11,7 @@ body {
 main {
     display: flex;
     width: 40rem;
-    height: 20rem;
+    height: 25rem;
     margin-top: 5rem;
     background-image: url(images/bg-pattern-desktop.svg);
     background-color: white;
@@ -49,6 +49,7 @@ main {
     text-align: left;
     cursor: pointer;
 }
+
 
 .dropdown-content-container {
     overflow-y: hidden;
