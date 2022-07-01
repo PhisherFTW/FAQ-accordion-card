@@ -1,21 +1,22 @@
 body {
     font-family: 'Kumbh Sans', sans-serif;
-    display: flex;
     justify-content: center;
     background-image: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
     background-repeat: no-repeat;
     background-size: 300rem;
     height: 45rem;
+    display: flex;
     overflow: hidden;
+    position: static;
 }
 main {
     display: flex;
     width: 40rem;
-    height: 25rem;
+    height: 26rem;
     margin-top: 5rem;
     background-image: url(images/bg-pattern-desktop.svg);
     background-color: white;
-    z-index: 50;
+    border-radius: 15px;
 }
 .left img {
     display: flex;
@@ -27,7 +28,6 @@ main {
     top: 10rem;
     bottom: 0;
     margin: 0 auto;
-    z-index: 50;
 }
 .right {
     width: 20rem;
@@ -35,33 +35,68 @@ main {
     padding: 1rem;
     margin-left: 17rem;
 }
-.btn-dropdown {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-style: none none solid none;
-    border-color: hsl(240, 5%, 91%);
-    border-width: 1px;
-    background-color: white;
-    margin-top: 10px;
-    width: 20rem;
-    text-align: left;
-    cursor: pointer;
-}
-
-
-.dropdown-content-container {
-    overflow-y: hidden;
+.answer {
     max-height: 0;
-    transition: all 0.25s;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
 }
-  
-.btn-dropdown.open>.dropdown-content-container {
-    max-height: 150px;
-    transition: all 0.4s;
+.answer p {
+    margin: 0;
 }
-.arrow {
-    width: 0.5rem;
-    height: 0.5rem;
+.question-container {
+    border-bottom: 2px solid hsl(240, 5%, 91%);
+    padding: 10px 0;
+    margin: 5px 0;
 }
+.question {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 20rem;
+}
+.question p {
+    margin: 0;
+}
+.question:hover {
+    color: hsl(14, 88%, 65%);
+}
+.question.is-open {
+    margin: 0;
+    font-weight: 700; 
+    color: black !important;
+}
+.question img {
+    width: 10px;
+    height: 10px;
+}
+/* This is after is opens */
+.question.is-open img {
+    transform: rotate(180deg);
+    width: 10px;
+    height: 10px;
+}
+@media only screen and (max-width: 800px){
+    .right {
+        margin-left: 0;
+    }
+    .left {
+        display: flex;
+        width: 5rem;
+    }
+    main {
+        height: 30rem;
+        margin-top: 11rem;
+    }
+    .left img {
+        display: flex;
+        width: 17rem;
+        height: 15rem;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: 0 auto;
+    }
+}
+
